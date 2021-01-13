@@ -104,7 +104,7 @@ body.full-screen {
 
 /* - - -  - - -  - - -  - - -  - - - INTERACTIONS - - -  - - -  - - -  - - -  - - - */
 
-.grid:hover .square {
+.grid .grid:hover .square {
     border-width: calc(var(--width) + var(--bias));
 }
 
