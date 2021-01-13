@@ -1,0 +1,56 @@
+/* - - -  - - -  - - -  - - -  - - - RESET - - -  - - -  - - -  - - -  - - - */
+
+*, ::before, ::after {
+    box-sizing: border-box;
+}
+
+html {
+    scrollbar-width: thin;
+    scrollbar-color: cyan yellow;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+body {}
+
+/* - - -  - - -  - - -  - - -  - - - RESET - - -  - - -  - - -  - - -  - - - */
+
+.img-container {
+    margin-inline: auto;
+    height: 500px;
+    width: 75%;
+    overflow: scroll;
+    scrollbar-width: thin;
+    scrollbar-color: peachpuff hotpink;
+    cursor: pointer;
+}
+
+img {
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+}
+
+.img-container.full-screen {
+    position: fixed;
+    overflow: hidden;
+    width: 100vw;
+    height: 100vh;
+}
+
+body.full-screen {
+    overflow: hidden;
+}
+
+/* - - -  - - -  - - -  - - -  - - - GRID - - -  - - -  - - -  - - -  - - - */
+
+.grid {
+    display: grid;
+}
+
+/* - - -  - - -  - - -  - - -  - - - GRID - - -  - - -  - - -  - - -  - - - */
