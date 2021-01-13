@@ -18,10 +18,19 @@ body {}
 
 /* - - -  - - -  - - -  - - -  - - - RESET - - -  - - -  - - -  - - -  - - - */
 
+/* - - -  - - -  - - -  - - -  - - - GLOBAL CUSTOM PROPS - - -  - - -  - - -  - - -  - - - */
+
+html {
+    --transition-0: 75ms;
+    --transition-1: 125ms;
+    --transition-2: 200ms;
+}
+
+/* - - -  - - -  - - -  - - -  - - - GLOBAL CUSTOM PROPS - - -  - - -  - - -  - - -  - - - */
+
 .img-container {
     margin-inline: auto;
-    height: 500px;
-    width: 75%;
+    width: 100%;
     overflow: scroll;
     scrollbar-width: thin;
     scrollbar-color: peachpuff hotpink;
@@ -56,6 +65,52 @@ body.full-screen {
 
 .grid {
     display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-flow: dense;
+}
+
+.grid .grid {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+
+.grid>.img-container:nth-child(3) {
+    grid-column: span 2;
+}
+
+.grid>.img-container:nth-child(6) {
+    grid-column: span 3;
+    grid-row: span 1;
 }
 
 /* - - -  - - -  - - -  - - -  - - - GRID - - -  - - -  - - -  - - -  - - - */
+
+/* - - -  - - -  - - -  - - -  - - - SHAPES - - -  - - -  - - -  - - -  - - - */
+
+.square {
+    --width: 1px;
+    --bias: 2px;
+    --mult: 2;
+    border: var(--width) black dashed;
+    transition: border-width var(--transition-0), border-style var(--transition-2);
+}
+
+.full-screen .grid > .square{
+    display: none;
+}
+
+/* - - -  - - -  - - -  - - -  - - - SHAPES - - -  - - -  - - -  - - -  - - - */
+
+/* - - -  - - -  - - -  - - -  - - - INTERACTIONS - - -  - - -  - - -  - - -  - - - */
+
+.grid:hover .square {
+    border-width: calc(var(--width) + var(--bias));
+}
+
+.square:hover {
+    border-style: dotted;
+    border-width: calc(var(--width) + (var(--bias) * var(--mult))) !important;
+}
+
+/* - - -  - - -  - - -  - - -  - - - INTERACTIONS - - -  - - -  - - -  - - -  - - - */
